@@ -15,10 +15,32 @@
         <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
         <% end %>
-        <%= yield %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
 
+        <!-- <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p> -->
+        <% if user_signed_in? %>
+        <ul>
+            <li>
+                <%= link_to "submit new link", new_link_path %>
+            </li>
+            <li>
+                <%= link_to "account settings", edit_user_registration_path %>
+            </li>
+            <li>
+                <%= link_to "sign out", destroy_user_session_path, :method => :delete%>
+            </li>
+        </ul>
+    <% else %>
+        <ul>
+            <li>
+                <%= link_to "sign up", new_user_registration_path %>
+            </li>
+            <li>
+                <%= link_to "sign in", new_user_session_path %>
+            </li>
+        </ul>
+        <% end %>
+        <%= yield %>
 
     </body>
 </html>
