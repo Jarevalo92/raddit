@@ -9,51 +9,49 @@
     </head>
 
     <body>
-      <div id="main" class="cointainer">
-        <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-        <% end %>
-      </div>
-
         <!-- <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p> -->
         <header class="navbar navbar-default" role="navigation">
             <div class="navbar-inner">
                 <div class="container">
                     <div id="logo" class="navbar-brand"><%= link_to "Raddit", root_path %></div>
-                        <nav class="collapse navbar-collapse navbar-ex1-collapse">
-                            <% if user_signed_in? %>
-                            <ul>
-                                <li>
-                                    <%= link_to "submit new link", new_link_path %>
-                                </li>
-                                <li>
-                                    <%= link_to "account settings", edit_user_registration_path %>
-                                </li>
-                                <li>
-                                    <%= link_to "sign out", destroy_user_session_path, :method => :delete%>
-                                </li>
-                            </ul>
-                        <% else %>
-                            <ul>
-                                <li>
-                                    <%= link_to "sign up", new_user_registration_path %>
-                                </li>
-                                <li>
-                                    <%= link_to "sign in", new_user_session_path %>
-                                </li>
-                            </ul>
-                            <% end %>
-                        </nav>
-                    </div>
+                    <nav class="collapse navbar-collapse navbar-ex1-collapse">
+                        <% if user_signed_in? %>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <%= link_to "submit new link", new_link_path %>
+                            </li>
+                            <li>
+                                <%= link_to "account settings", edit_user_registration_path %>
+                            </li>
+                            <li>
+                                <%= link_to "sign out", destroy_user_session_path, :method => :delete%>
+                            </li>
+                        </ul>
+                    <% else %>
+                        <ul class="nav navbar-nav pull-right">
+                            <li>
+                                <%= link_to "sign up", new_user_registration_path %>
+                            </li>
+                            <li>
+                                <%= link_to "sign in", new_user_session_path %>
+                            </li>
+                        </ul>
+                        <% end %>
+                    </nav>
                 </div>
             </div>
-        </header>
-        <div id="container" class="col-md-9 center-block">
-          <%= yield %>
-        </div>
-    </body>
+    </header>
+    <div id="main_content" class="container">
+        <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+    <div id="content" class="col-lg-9 center-block">
+        <%= yield %>
+    </div>
+      </div>
+</body>
 </html>
