@@ -29,7 +29,7 @@ gem 'devise'
 gem 'hirb'
 gem 'bootstrap-sass'
 gem 'acts_as_votable'
-gem 'simple_form'
+gem 'simple_form', '~> 3.0.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
