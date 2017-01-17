@@ -1,24 +1,10 @@
-# README
+Reddit Clone Built following Mackenzie Childs 12in12 Rails Application Tutorial
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://www.youtube.com/watch?v=7-1HCWbu7iU&t=2399s
 
-Things you may want to cover:
+* Utilized Devise Gem for User Registration and Sign in
 
-* Ruby version
+* Utilized Acts as Votable Gem for upvoting/downvoting system
 
-* System dependencies
+* Utilized Bootstrap-SASS Gem for implementing Responsive Bootstrap design.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
